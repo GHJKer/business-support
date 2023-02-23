@@ -1,0 +1,59 @@
+@import "base/base.scss";
+@import "components/components.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: inherit;
+  color: inherit;
+}
+
+.main-container {
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+
+  @media #{$screen-xxs-max} {
+    padding: 0 20px;
+  }
+
+  @media #{$screen-sm-min} {
+    max-width: 590px;
+  }
+
+  @media #{$screen-md2-min} {
+    max-width: 840px;
+  }
+
+  @media #{$screen-xl-min2} {
+    max-width: 1170px;
+  }
+}
+
+.svg-24 {
+  width: 24px;
+}
+
+.logo {
+  width: 120px;
+  height: 22px;
+
+  @media #{$screen-sm-min} {
+    order: 0;
+  }
+}

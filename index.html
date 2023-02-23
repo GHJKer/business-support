@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app" class="main-container">
+      <header class="header container">
+        <div class="header__content">
+          <img class="logo" src="/svg/logo.svg" alt="company logo" />
+          <div class="header__images-group">
+            <img
+              class="header__tel-img svg-24"
+              src="/svg/phone.svg"
+              alt="phone image"
+            />
+            <div class="header__search-menu">
+              <img
+                class="svg-24"
+                src="/svg/burger-menu.svg"
+                alt="burger-menu image"
+              />
+              <span class="header__text header--header-font">Меню</span>
+            </div>
+            <div class="header__search-menu">
+              <img class="svg-24" src="/svg/loupe.svg" alt="loupe image" />
+              <span class="header__text header--header-font">Поиск</span>
+            </div>
+          </div>
+          <div class="header__contacts-media">
+            <div class="header__tel header--header-font">
+              <a href="tel:8 (800) 707-07-11">8 (800) 707-07-11</a>
+            </div>
+            <div class="header__media-group">
+              <img class="svg-24" src="/svg/ok.svg" alt="ok" />
+              <img class="svg-24" src="/svg/vk.svg" alt="vk" />
+              <img class="svg-24" src="/svg/tg.svg" alt="tg" />
+              <img
+                class="header__ru-img svg-24"
+                src="/svg/ru.svg"
+                alt="rutube"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="container">
+        <div class="info">
+          <div>
+            <div class="info__text-block">
+              <p class="info__big-text">ПОДДЕРЖКА МАЛОГО БИЗНЕСА</p>
+              <p class="info__small-text">
+                Комплексная поддержка предпринимателей Краснодарского края
+              </p>
+            </div>
+            <div>
+              <button class="info__button">Оставить заявку</button>
+              <div class="info__pagination-container">
+                <div class="info__pagination info__small-text">
+                  <span>01</span>
+                  <div id="progress-bar" class="info__progress-bar"></div>
+                  <span>05</span>
+                </div>
+                <div class="info__arrow-container">
+                  <img
+                    id="left"
+                    class="info__arrow"
+                    src="/svg/arrow.svg"
+                    alt="arrow"
+                  />
+                  <img
+                    id="right"
+                    class="info__arrow-right info__arrow"
+                    src="/svg/arrow.svg"
+                    alt="arrow"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="slider-window" class="info__slider-window">
+            <div id="slider" class="info__slider">
+              <img
+                id="img-1"
+                class="info__img info__img-big"
+                src="images/img1.png"
+                alt="carousel img"
+              />
+              <img
+                id="img-2"
+                class="info__img"
+                src="images/img2.png"
+                alt="carousel img"
+              />
+              <img
+                id="img-3"
+                class="info__img"
+                src="images/img3.png"
+                alt="carousel img"
+              />
+              <img
+                id="img-4"
+                class="info__img"
+                src="images/img4.png"
+                alt="carousel img"
+              />
+              <img
+                id="img-5"
+                class="info__img"
+                src="images/img5.png"
+                alt="carousel img"
+              />
+            </div>
+          </div>
+        </div>
+        <div id="calendar" class="calendar">
+          <div class="calendar__month">october</div>
+          <div class="calendar__day">1</div>
+          <div class="calendar__day calendar__day--circled">2</div>
+          <div
+            class="calendar__day calendar__day--circled calendar__day--selected"
+          >
+            3
+          </div>
+        </div>
+        <div class="slider"></div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

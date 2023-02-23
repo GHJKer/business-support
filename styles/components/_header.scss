@@ -1,0 +1,120 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+.header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+
+  @media #{$screen-sm-min} {
+    height: 60px;
+  }
+
+  @media #{$screen-md2-min} {
+    max-width: 70px;
+  }
+
+  @media #{$screen-xl-min2} {
+    max-width: 90px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__images-group {
+    display: flex;
+    gap: 40px;
+    height: 24px;
+
+    @media #{$screen-xxs-max} {
+      gap: 15px;
+    }
+
+    @media #{$screen-sm-min} {
+      order: -1;
+    }
+  }
+
+  &__search-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__contacts-media {
+    display: none;
+    gap: 40px;
+
+    @media #{$screen-md2-min} {
+      display: flex;
+    }
+  }
+
+  &__media-group {
+    display: none;
+
+    @media #{$screen-md2-min} {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  &__tel-img {
+    @media #{$screen-sm-min} {
+      display: none;
+    }
+  }
+
+  &__ru-img {
+    display: none;
+
+    @media #{$screen-xl-min2} {
+      display: inline;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media #{$screen-md2-min} {
+      display: inline;
+    }
+  }
+
+  &--header-font {
+    font-family: "Gilroy-Medium";
+    font-style: normal;
+    font-weight: 500;
+    color: $text-color;
+
+    @media #{$screen-sm-min} {
+      font-size: 14px;
+      line-height: 140%;
+    }
+
+    @media #{$screen-md2-min} {
+      font-size: 14px;
+      line-height: 125%;
+    }
+
+    @media #{$screen-xl-min2} {
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+
+  &--header-font:hover {
+    cursor: pointer;
+    color: red;
+  }
+
+  &__tel {
+    display: none;
+
+    @media #{$screen-sm-min} {
+      display: inline;
+    }
+  }
+}

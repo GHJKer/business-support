@@ -1,0 +1,35 @@
+.calendar {
+  width: 100%;
+  max-width: 370px;
+
+  &__month {
+    background-color: $red-1;
+  }
+
+  &__day {
+    background-color: rgb(170, 224, 170);
+    font-size: 20px;
+
+    @media #{$screen-xs-min} {
+      color: rgb(255, 187, 98);
+      font-size: 25px;
+    }
+
+    @media #{$screen-md-min} {
+      font-size: 32px;
+    }
+
+    @media #{$screen-lg-min} {
+      font-size: 40px;
+    }
+
+    &--circled {
+      border-radius: 50%;
+      border: 1px solid $red-1;
+    }
+
+    &--selected {
+      background-color: $red-1;
+    }
+  }
+}
