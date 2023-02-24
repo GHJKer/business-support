@@ -8,6 +8,12 @@
     flex-direction: column;
   }
 
+  &__text-container {
+    @media #{$screen-xxxs-max} {
+      order: 1;
+    }
+  }
+
   &__text-block {
     display: none;
 
@@ -80,6 +86,7 @@
     background: $btn-background;
     color: #fff;
     padding: 10px 30px;
+    transition: 0.2s;
 
     font-family: "Gilroy-Medium";
     font-style: normal;
@@ -125,11 +132,23 @@
   }
 
   &__pagination-container {
-    width: 450px;
+    width: 280px;
     height: 40px;
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
+
+    @media #{$screen-sm-min} {
+      width: 250px;
+    }
+
+    @media #{$screen-md2-min} {
+      width: 338px;
+    }
+
+    @media #{$screen-xl-min2} {
+      width: 450px;
+    }
   }
 
   &__pagination {
@@ -172,8 +191,15 @@
 
   &__slider-window {
     position: absolute;
-    right: -820px;
+    left: 820px;
     overflow: hidden;
+
+    @media #{$screen-xxxs-max} {
+      position: static;
+      order: 0;
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
   }
 
   &__slider {
@@ -181,20 +207,64 @@
     display: flex;
     align-items: center;
     gap: 20px;
-    height: 465px;
+    height: 330px;
     border-radius: 10px;
     transition: transform 0.2s ease 0s;
+
+    @media #{$screen-sm-min} {
+      height: 354px;
+    }
+
+    @media #{$screen-md2-min} {
+      height: 400px;
+    }
+
+    @media #{$screen-xl-min2} {
+      height: 465px;
+    }
   }
 
+  // 358 X 415 | 302 X 350 | 240 X 278 | 245 X 257
   &__img {
     transition: width 0.1s;
     transition: height 0.1s;
-    width: 358px;
-    height: 415px;
+    width: 245px;
+    height: 257px;
+
+    @media #{$screen-sm-min} {
+      width: 240px;
+      height: 278px;
+    }
+
+    @media #{$screen-md2-min} {
+      width: 302px;
+      height: 350px;
+    }
+
+    @media #{$screen-xl-min2} {
+      width: 358px;
+      height: 415px;
+    }
   }
 
+  // 400 X 465 | 339 X 400 | 300 X 354 | 280 X 300
   &__img-big {
-    width: 400px;
-    height: 465px;
+    width: 280px;
+    height: 330px;
+
+    @media #{$screen-sm-min} {
+      width: 300px;
+      height: 354px;
+    }
+
+    @media #{$screen-md2-min} {
+      width: 339px;
+      height: 400px;
+    }
+
+    @media #{$screen-xl-min2} {
+      width: 400px;
+      height: 465px;
+    }
   }
 }
