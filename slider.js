@@ -31,6 +31,8 @@ export function createSlider() {
 
     PrevImgLocal.classList.toggle("info__img-big");
     currentImgLocal.classList.toggle("info__img-big");
+    PrevImgLocal.classList.toggle("info__img");
+    currentImgLocal.classList.toggle("info__img");
   }
 
   // Обновляем размер изображенией в переменных
