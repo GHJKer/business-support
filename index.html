@@ -59,7 +59,7 @@
         <div class="info">
           <div class="info__text-container">
             <div id="text-block" class="info__text-block">
-              <p class="info__big-text">ПОДДЕРЖКА МАЛОГО БИЗНЕСА</p>
+              <h1 class="info__big-text">ПОДДЕРЖКА МАЛОГО БИЗНЕСА</h1>
               <p class="info__small-text">
                 Комплексная поддержка предпринимателей Краснодарского края
               </p>
@@ -69,7 +69,7 @@
               <div class="info__pagination-container">
                 <div class="info__pagination info__small-text">
                   <span>01</span>
-                  <div id="progress-bar" class="info__progress-bar"></div>
+                  <div id="black-light" class="info__black-light"></div>
                   <span>05</span>
                 </div>
                 <div class="info__arrow-container">
@@ -129,17 +129,56 @@
             </div>
           </div>
         </div>
-        <div id="calendar" class="calendar">
-          <div class="calendar__month">october</div>
-          <div class="calendar__day">1</div>
-          <div class="calendar__day calendar__day--circled">2</div>
-          <div
-            class="calendar__day calendar__day--circled calendar__day--selected"
-          >
-            3
+        <div class="calendar-affiche">
+          <div class="calendar">
+            <div class="calendar__control">
+              <img
+                id="next-month"
+                class="calendar-affiche__arrow"
+                src="/svg/arrow.svg"
+                alt="arrow"
+              />
+              <span id="month-text" class="calendar__month-text"
+                >Февраль 2023</span
+              >
+              <img
+                id="prev-month"
+                class="calendar-affiche__arrow-right calendar-affiche__arrow"
+                src="/svg/arrow.svg"
+                alt="arrow"
+              />
+            </div>
+            <div id="calendar" class="calendar__days"></div>
+          </div>
+          <div id="affiche" class="affiche">
+            <img
+              id="prev-event"
+              class="calendar-affiche__arrow calendar-affiche__arrow-absolute--left"
+              src="/svg/arrow.svg"
+              alt="arrow"
+            />
+            <img
+              id="next-event"
+              class="calendar-affiche__arrow-right calendar-affiche__arrow calendar-affiche__arrow-absolute--right"
+              src="/svg/arrow.svg"
+              alt="arrow"
+            />
+            <span id="affiche-date" class="affiche__date">13 / 12 / 22</span>
+            <p id="affiche-text" class="affiche__text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur,
+              iste odio id laboriosam ullam ab provident modi deleniti!.
+            </p>
+            <div class="affiche__about">
+              <div class="affiche__control-left">
+                <span class="affiche__control-text">ДЛЯ ПРЕДПРИНИМАТЕЛЕЙ</span>
+              </div>
+              <div class="affiche__control-right">
+                <span class="affiche__more">Подробнее</span>
+                <img src="/svg/control-arrow.svg" alt="control-arrow" />
+              </div>
+            </div>
           </div>
         </div>
-        <div class="slider"></div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

@@ -8,7 +8,7 @@ export function createSlider() {
   const SliderVisiblePart = windowWIdth - sliderWindowDist;
   // -- //
 
-  let progressBar = document.getElementById("progress-bar");
+  let progressBar = document.getElementById("black-light");
 
   let prevItem;
   let itemNum = 1;

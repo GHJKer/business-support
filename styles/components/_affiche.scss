@@ -1,0 +1,60 @@
+.affiche {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 770px;
+  height: 386px;
+  padding: 40px 60px;
+  background-color: $orange-ultra-light;
+  border-radius: 20px;
+
+  &__date {
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 125%;
+    color: $orange;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 125%;
+  }
+
+  &__about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__control-left {
+    padding: 6px 15px 4px;
+    border-radius: 91px;
+    background-color: $white;
+  }
+
+  &__control-text {
+    font-family: "Gilroy-Light";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__control-right {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  &__more {
+    font-family: "Gilroy-Light";
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+  }
+}
+
+.affiche:hover {
+  background-color: $purple-light;
+}

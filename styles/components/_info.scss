@@ -37,7 +37,7 @@
     font-family: "Gilroy-Medium";
     font-style: normal;
     font-weight: 600;
-    color: $text-color;
+    color: $black-light;
 
     @media #{$screen-sm-min} {
       font-size: 24px;
@@ -59,7 +59,7 @@
     font-family: "Gilroy-Regular";
     font-style: normal;
     font-weight: 400;
-    color: $text-color;
+    color: $black-light;
 
     @media #{$screen-sm-min} {
       font-size: 14px;
@@ -83,7 +83,7 @@
     appearance: none;
     border: 0;
     border-radius: 72px;
-    background: $btn-background;
+    background: $orange;
     color: #fff;
     padding: 10px 30px;
     transition: 0.2s;
@@ -124,11 +124,11 @@
   }
 
   &__button:hover {
-    background: $btn-background-hover;
+    background: $dark-orange;
   }
 
   &__button:active {
-    background: $btn-background;
+    background: $orange;
   }
 
   &__pagination-container {
@@ -157,19 +157,19 @@
     gap: 8px;
   }
 
-  &__progress-bar {
+  &__black-light {
     --currentSlide: 0;
     --width: calc(100 / 5);
 
     width: 100px;
     background: linear-gradient(
       90deg,
-      $progress-line 0%,
-      $progress-line calc(var(--currentSlide) * var(--width) * 1%),
-      $progress-bar calc(var(--currentSlide) * var(--width) * 1%),
-      $progress-bar calc((var(--currentSlide) + 1) * var(--width) * 1%),
-      $progress-line calc((var(--currentSlide) + 1) * var(--width) * 1%),
-      $progress-line 100%
+      $gray-light 0%,
+      $gray-light calc(var(--currentSlide) * var(--width) * 1%),
+      $black-light calc(var(--currentSlide) * var(--width) * 1%),
+      $black-light calc((var(--currentSlide) + 1) * var(--width) * 1%),
+      $gray-light calc((var(--currentSlide) + 1) * var(--width) * 1%),
+      $gray-light 100%
     );
 
     height: 2px;

@@ -1,0 +1,28 @@
+.calendar-affiche {
+  display: flex;
+  gap: 20px;
+  font-family: "Gilroy-Medium";
+  font-style: normal;
+
+  &__arrow-right {
+    transform: rotate(180deg);
+  }
+
+  &__arrow {
+    width: 10px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  &__arrow-absolute--left {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+  }
+
+  &__arrow-absolute--right {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+  }
+}
