@@ -140,9 +140,11 @@ export function createCalendar() {
   }
 
   function setInitiateEvent() {
-    event = events[0];
-    currentDay = events[0].day;
-    let firstEvent = events[0];
+    let newEvent = events.filter((item) => item.month === currentMonth)[0];
+
+    event = newEvent;
+    currentDay = newEvent.day;
+    let firstEvent = newEvent;
     afficheDate.innerText = `${firstEvent.day} / ${firstEvent.month} / 2023`;
     afficheText.innerText = firstEvent.text;
     let firstEventEl = document.getElementById(`${firstEvent.day}`);

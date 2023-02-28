@@ -7,8 +7,8 @@
 
   &__header {
     font-weight: 600;
-    font-size: 46px;
-    line-height: 125%;
+    font-size: 20px;
+    line-height: 130%;
 
     @media #{$screen-sm-min} {
       font-size: 24px;
@@ -29,6 +29,10 @@
   &__container {
     display: flex;
     gap: 30px;
+
+    @media #{$screen-xxxs-max} {
+      flex-direction: column;
+    }
   }
 
   &__arrow-right {
@@ -39,6 +43,11 @@
     width: 10px;
     height: 20px;
     cursor: pointer;
+    display: none;
+
+    @media #{$screen-md2-min} {
+      display: inline;
+    }
   }
 
   &__arrow-absolute--left {
@@ -50,6 +59,27 @@
   &__arrow-absolute--right {
     position: absolute;
     right: 20px;
+    top: 50%;
+  }
+
+  &__arrow-mobile {
+    // width: 5px;
+    // height: 10px;
+    position: absolute;
+
+    @media #{$screen-md2-min} {
+      display: none;
+    }
+  }
+
+  &__arrow-mobile--right {
+    right: 5px;
+    top: 50%;
+    transform: rotate(180deg);
+  }
+
+  &__arrow-mobile--left {
+    left: 5px;
     top: 50%;
   }
 }
