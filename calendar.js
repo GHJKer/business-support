@@ -34,6 +34,12 @@ export function createCalendar() {
       day: 5,
       text: "МАСТЕР- КЛАСС «5 ПСИХОТИПОВ ПОКУПАТЕЛЕЙ В ФЭШН– ЗНАТЬ И ВЛИЯТЬ! КАКИЕ ТРИГГЕРЫ У ЦЕЛЕВОЙ АУДИТОРИИ ВАШЕГО БРЕНДА?»",
     },
+    {
+      id: 6,
+      month: 3,
+      day: 17,
+      text: "Гид для родителей: как выявить предрасположенность и подготовить будущего спортсмена",
+    },
   ];
 
   function createCalendar(elem, year, month) {
@@ -86,7 +92,7 @@ export function createCalendar() {
     return day - 1;
   }
 
-  function changeEvent(day, month) {
+  function selectDay(day, month) {
     event = events.find((item) => item.day === day && item.month === month);
     function changeDate() {
       afficheDate.innerText = `${currentDay} / ${currentMonth} / 23`;
@@ -110,7 +116,7 @@ export function createCalendar() {
 
         monthDay.classList.toggle("calendar__picked");
         currentDay = Number(monthDay.id);
-        changeEvent(currentDay, currentMonth);
+        selectDay(currentDay, currentMonth);
       });
     });
   }
@@ -146,12 +152,31 @@ export function createCalendar() {
   function changeEvent(increment) {
     let prevChosen = document.querySelector(".calendar__picked");
 
-    if (increment && event.id + 1 > events.length) return;
-    if (!increment && event.id - 1 <= 0) return;
+    if (!event) {
+      // Переключение события если если выбран день без события
+      let otherEvent = events.filter((item) =>
+        increment
+          ? item.day > currentDay && item.month === currentMonth
+          : item.day < currentDay && item.month === currentMonth
+      );
 
-    event = events.find((item) =>
-      increment ? item.id === event.id + 1 : item.id === event.id - 1
-    );
+      if (otherEvent.length === 0) {
+        otherEvent = events.filter((item) =>
+          increment ? item.month > currentMonth : item.month < currentMonth
+        );
+      }
+
+      event = increment ? otherEvent[0] : otherEvent[otherEvent.length - 1];
+
+      // -- //
+    } else {
+      if (increment && event.id + 1 > events.length) return;
+      if (!increment && event.id - 1 <= 0) return;
+
+      event = events.find((item) =>
+        increment ? item.id === event.id + 1 : item.id === event.id - 1
+      );
+    }
 
     if (currentMonth !== event.month) increment ? nextMonth() : prevMonth();
     let nextEventDay = document.getElementById(`${event.day}`);

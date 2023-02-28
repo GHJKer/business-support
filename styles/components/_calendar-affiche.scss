@@ -1,8 +1,35 @@
 .calendar-affiche {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 10px;
   font-family: "Gilroy-Medium";
   font-style: normal;
+
+  &__header {
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 125%;
+
+    @media #{$screen-sm-min} {
+      font-size: 24px;
+      line-height: 120%;
+    }
+
+    @media #{$screen-md2-min} {
+      font-size: 32px;
+      line-height: 125%;
+    }
+
+    @media #{$screen-xl-min2} {
+      font-size: 46px;
+      line-height: 125%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    gap: 30px;
+  }
 
   &__arrow-right {
     transform: rotate(180deg);
