@@ -202,15 +202,31 @@
         <div id="modal" class="modal-window">
           <h2 class="modal-window__header">ЗАЯВКА НА ОКАЗАНИЕ УСЛУГИ</h2>
           <div class="modal-window__input-container">
-            <input class="modal-window__input" type="text" placeholder="ФИО*" />
-            <input
-              class="modal-window__input"
-              id="input-phone"
-              minlength="12"
-              maxlength="12"
-              placeholder="Телефон*"
-              type="tel"
-            />
+            <div class="modal-window__input-group">
+              <input
+                id="name-input"
+                class="modal-window__input"
+                type="text"
+                placeholder="ФИО*"
+                required
+              />
+              <span id="error-text" class="modal-window__error-text"
+                >ФИО должно содержать только русские буквы</span
+              >
+            </div>
+            <div class="modal-window__input-group">
+              <input
+                class="modal-window__input"
+                id="input-phone"
+                required
+                placeholder="Телефон*"
+                type="tel"
+                inputmode="tel"
+              />
+              <span id="error-text-tel" class="modal-window__error-text"
+                >Поле обязательно для заполнения</span
+              >
+            </div>
             <input
               class="modal-window__input"
               type="email"
