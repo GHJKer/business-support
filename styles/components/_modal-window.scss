@@ -89,6 +89,12 @@
     }
   }
 
+  &__input::-webkit-outer-spin-button,
+  &__input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
   &__input:focus {
     outline: 0;
   }

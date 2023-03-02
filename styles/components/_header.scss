@@ -41,6 +41,12 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    color: $black-light;
+  }
+
+  &__search-menu:hover {
+    cursor: pointer;
+    color: $orange;
   }
 
   &__contacts-media {
@@ -87,7 +93,7 @@
     font-family: "Gilroy-Medium";
     font-style: normal;
     font-weight: 500;
-    color: $black-light;
+    color: inherit;
 
     @media #{$screen-sm-min} {
       font-size: 14px;
@@ -107,7 +113,7 @@
 
   &--header-font:hover {
     cursor: pointer;
-    color: red;
+    color: $orange;
   }
 
   &__tel {

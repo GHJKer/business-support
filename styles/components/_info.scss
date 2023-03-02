@@ -242,9 +242,57 @@
   &__picture {
     width: 100%;
     border-radius: 20px;
+    transition: transform 0.2s ease 0s;
+  }
+
+  &__picture:hover {
+    @media #{$screen-sm-min} {
+      transform: scale(1.15);
+    }
+  }
+
+  &__slide-arrow {
+    transition: transform 0.2s ease 0s;
+  }
+
+  &__img-big:hover &__slide-arrow {
+    @media #{$screen-sm-min} {
+      transform: scale(1.5) rotate(-45deg);
+    }
+  }
+
+  &__slide-text-group {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 240px;
+    color: $white;
+    font-family: "Gilroy-Medium";
+
+    @media #{$screen-sm-min} {
+      width: 260px;
+    }
+
+    @media #{$screen-md2-min} {
+      width: 300px;
+    }
+
+    @media #{$screen-xl-min2} {
+      width: 350px;
+    }
   }
 
   // 358 X 415 | 302 X 350 | 240 X 278 | 245 X 257
+  &__img,
+  &__img-big {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
   &__img {
     transition: all 0.1s;
     min-width: 245px;

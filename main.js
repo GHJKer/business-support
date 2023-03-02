@@ -1,8 +1,8 @@
 import "./styles/style.scss";
 
-import { createSlider } from "./slider.js";
-import { createCalendar } from "./calendar";
-import { createModal } from "./modal";
+import { createSlider } from "./scripts/slider.js";
+import { createCalendar } from "./scripts/calendar";
+import { createModal } from "./scripts/modal";
 
 createSlider();
 createCalendar();
