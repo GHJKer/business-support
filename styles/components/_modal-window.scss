@@ -7,7 +7,7 @@
   width: 279px;
   height: 615px;
   background: #fff;
-  padding: 40px 19px;
+  padding: 30px 19px;
   top: 20%;
 
   font-family: "Gilroy-Light", sans-serif;
@@ -18,7 +18,7 @@
   @media #{$screen-sm-min} {
     width: 580px;
     height: 674px;
-    padding: 60px 30px;
+    padding: 40px 30px;
   }
 
   @media #{$screen-md2-min} {
@@ -29,6 +29,18 @@
   @media #{$screen-xl-min2} {
     width: 608px;
     height: 674px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+
+    @media #{$screen-xxxs-max} {
+      top: 12px;
+      right: 12px;
+      width: 23px;
+    }
   }
 
   &__header {
@@ -191,6 +203,7 @@
     color: #fff;
     padding: 10px 30px;
     transition: 0.2s;
+    cursor: pointer;
 
     font-family: "Gilroy-Regular";
     font-style: normal;
@@ -202,5 +215,13 @@
       width: 100%;
       margin-top: 20px;
     }
+  }
+
+  &__button:hover {
+    background: $dark-orange;
+  }
+
+  &__button:active {
+    background: $orange;
   }
 }

@@ -7,6 +7,12 @@ export function createModal() {
   const errorTextPhone = document.getElementById("error-text-tel");
   const nameInput = document.getElementById("name-input");
   const phoneInput = document.getElementById("input-phone");
+  const closeButton = document.getElementById("modal-close");
+
+  const errorStatuses = {
+    errorClass: "modal-window__error",
+    errorClassBottom: "modal-window__error-bottom",
+  };
 
   function checkInput() {
     let isPhoneValid = phoneInput.checkValidity();
@@ -14,34 +20,30 @@ export function createModal() {
 
     // проверяем русские буквы
     if (!isNameValid) {
-      errorText.classList.add("modal-window__error");
-      nameInput.classList.add("modal-window__error-bottom");
+      errorText.classList.add(errorStatuses.errorClass);
+      nameInput.classList.add(errorStatuses.errorClassBottom);
       errorText.innerText = "ФИО должно содержать только русские буквы";
-      console.log("1");
     }
 
     // проверяем пустое ли поле
     if (nameInput.value === "") {
-      errorText.classList.add("modal-window__error");
-      nameInput.classList.add("modal-window__error-bottom");
+      errorText.classList.add(errorStatuses.errorClass);
+      nameInput.classList.add(errorStatuses.errorClassBottom);
       errorText.innerText = "Поле обязательно для заполнения";
-      console.log("2");
     }
 
     if (isNameValid && nameInput.value.length > 0) {
-      errorText.classList.remove("modal-window__error");
-      nameInput.classList.remove("modal-window__error-bottom");
+      errorText.classList.remove(errorStatuses.errorClass);
+      nameInput.classList.remove(errorStatuses.errorClassBottom);
     }
 
     // проверяем пустое ли поле
     if (!isPhoneValid) {
-      errorTextPhone.classList.add("modal-window__error");
-      phoneInput.classList.add("modal-window__error-bottom");
-      console.log("21");
+      errorTextPhone.classList.add(errorStatuses.errorClass);
+      phoneInput.classList.add(errorStatuses.errorClassBottom);
     } else {
-      errorTextPhone.classList.remove("modal-window__error");
-      phoneInput.classList.remove("modal-window__error-bottom");
-      console.log("22");
+      errorTextPhone.classList.remove(errorStatuses.errorClass);
+      phoneInput.classList.remove(errorStatuses.errorClassBottom);
     }
   }
 
@@ -49,10 +51,10 @@ export function createModal() {
     modalWindow.classList.toggle("active");
     modalFader.classList.toggle("active");
     // убрать классы ошибок
-    errorTextPhone.classList.remove("modal-window__error");
-    phoneInput.classList.remove("modal-window__error-bottom");
-    errorText.classList.remove("modal-window__error");
-    nameInput.classList.remove("modal-window__error-bottom");
+    errorTextPhone.classList.remove(errorStatuses.errorClass);
+    phoneInput.classList.remove(errorStatuses.errorClassBottom);
+    errorText.classList.remove(errorStatuses.errorClass);
+    nameInput.classList.remove(errorStatuses.errorClassBottom);
     // зачистить инпуты
     phoneInput.value = "";
     nameInput.value = "";
@@ -67,6 +69,10 @@ export function createModal() {
   });
 
   modalFader.addEventListener("click", function () {
+    toggleModal();
+  });
+
+  closeButton.addEventListener("click", function () {
     toggleModal();
   });
 }
