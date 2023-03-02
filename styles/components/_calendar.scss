@@ -90,6 +90,10 @@
     }
   }
 
+  &__event-day {
+    border: 1px solid $orange;
+  }
+
   &__day:hover {
     border: 1px solid $orange;
     cursor: pointer;

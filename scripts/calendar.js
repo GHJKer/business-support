@@ -49,6 +49,12 @@ export function createCalendar() {
     let table =
       "<table><tr><th>пн</th><th>вт</th><th>ср</th><th>чт</th><th>пт</th><th>сб</th><th>вс</th></tr><tr>";
 
+    // собираем все события месяца
+    let currentMonthEvents = events
+      .filter((item) => item.month === currentMonth)
+      .map((item) => item.day);
+    console.log(currentMonthEvents);
+
     // пробелы для первого ряда
     // с понедельника до первого дня месяца
     // * * * 1  2  3  4
@@ -57,9 +63,12 @@ export function createCalendar() {
     }
 
     // <td> ячейки календаря с датами
+    // добавляем классы дням с событями
     while (d.getMonth() == mon) {
       table +=
-        `<td><div id="${d.getDate()}" class="calendar__day">` +
+        `<td><div id="${d.getDate()}" class="calendar__day ${
+          currentMonthEvents.includes(d.getDate()) ? "calendar__event-day" : ""
+        }">` +
         d.getDate() +
         "</div></td>";
 
@@ -123,19 +132,19 @@ export function createCalendar() {
 
   function prevMonth() {
     if (currentMonth > 2) {
+      currentMonth -= 1;
       createCalendar(calendar, 2023, 2);
       monthText.innerText = "Февраль 2023";
       getDates();
-      currentMonth -= 1;
     }
   }
 
   function nextMonth() {
     if (currentMonth < 3) {
+      currentMonth += 1;
       createCalendar(calendar, 2023, 3);
       monthText.innerText = "Март 2023";
       getDates();
-      currentMonth += 1;
     }
   }
 
