@@ -43,11 +43,11 @@ p {
 .container {
   margin: 0 auto;
 
-  @media #{$screen-xxs-max} {
+  @media #{$screen-sm-max} {
     padding: 0 20px;
   }
 
-  @media #{$screen-sm-min} {
+  @media #{$screen-xxs-min} {
     max-width: 590px;
   }
 

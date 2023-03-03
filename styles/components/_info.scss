@@ -4,7 +4,7 @@
   margin-bottom: 80px;
   gap: 30px;
 
-  @media #{$screen-xxs-max} {
+  @media #{$screen-sm-max} {
     flex-direction: column;
   }
 
@@ -13,7 +13,7 @@
     flex-direction: column;
     gap: 30px;
 
-    @media #{$screen-xxxs-max} {
+    @media #{$screen-sm-max} {
       order: 1;
     }
 
@@ -210,7 +210,7 @@
     left: 820px;
     overflow: hidden;
 
-    @media #{$screen-xxxs-max} {
+    @media #{$screen-sm-max} {
       position: static;
       order: 0;
       margin: 0 -20px;

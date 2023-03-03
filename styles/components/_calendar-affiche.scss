@@ -5,6 +5,10 @@
   font-family: "Gilroy-Medium";
   font-style: normal;
 
+  @media #{$screen-sm-max} {
+    align-items: center;
+  }
+
   &__header {
     font-weight: 600;
     font-size: 20px;
@@ -30,7 +34,7 @@
     display: flex;
     gap: 30px;
 
-    @media #{$screen-xxxs-max} {
+    @media #{$screen-sm-max} {
       flex-direction: column;
     }
   }

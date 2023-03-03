@@ -5,10 +5,10 @@
   transform: translateX(-50%);
   z-index: 99999;
   width: 279px;
-  height: 615px;
+  height: 635px;
   background: #fff;
   padding: 30px 19px;
-  top: 20%;
+  top: 10%;
 
   font-family: "Gilroy-Light", sans-serif;
   font-weight: 400;
@@ -19,6 +19,7 @@
     width: 580px;
     height: 674px;
     padding: 40px 30px;
+    top: 20%;
   }
 
   @media #{$screen-md2-min} {
@@ -187,6 +188,8 @@
   }
 
   // &__checkbox {
+  //   accent-color: white;
+  //   outline: 0;
   // }
 
   &__confidential {
