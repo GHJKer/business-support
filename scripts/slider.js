@@ -107,23 +107,28 @@ export function createSlider() {
   let positions = [];
 
   function getMousePosition(event) {
-    console.log(`mouse location = X: ${event.changedTouches[0].clientX}`);
     positions.push(`${event.changedTouches[0].clientX}`);
     getPositionWorking = false;
   }
 
-  ontouchmove = function (e) {
+  // const ontouchmove = function (e) {
+  //   if (isTouchDown) {
+  //     getMousePosition(e);
+  //   }
+  // };
+
+  slider.addEventListener("touchmove", function (e) {
+    console.log("move", e.changedTouches[0].clientX);
     if (isTouchDown) {
       getMousePosition(e);
     }
-  };
+  });
 
   slider.addEventListener("touchstart", function () {
     isTouchDown = true;
-    console.log("down");
   });
 
-  ontouchend = function () {
+  slider.addEventListener("touchend", function () {
     isTouchDown = false;
     let positionsDifference = positions[0] - positions[positions.length - 1];
     if (positionsDifference < -imgWidth / 4) {
@@ -133,10 +138,19 @@ export function createSlider() {
       next();
     }
     positions = [];
+  });
 
-    console.log(positionsDifference);
-    console.log("up");
-  };
+  // const ontouchend = function () {
+  //   isTouchDown = false;
+  //   let positionsDifference = positions[0] - positions[positions.length - 1];
+  //   if (positionsDifference < -imgWidth / 4) {
+  //     prev();
+  //   }
+  //   if (positionsDifference > imgWidth / 4) {
+  //     next();
+  //   }
+  //   positions = [];
+  // };
 
   // -- //
 }
