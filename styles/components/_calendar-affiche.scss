@@ -43,11 +43,6 @@
     width: 10px;
     height: 20px;
     cursor: pointer;
-    display: none;
-
-    @media #{$screen-md2-min} {
-      display: inline;
-    }
   }
 
   &__arrow-absolute--left {

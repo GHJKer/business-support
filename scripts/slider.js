@@ -92,4 +92,33 @@ export function createSlider() {
     slider.style.transform = `translate3d(${position}px, 0px, 0px)`;
     progressBar.style.setProperty("--currentSlide", itemNum - 1);
   };
+
+  // let isMouseDown = false;
+
+  // function getMousePosition(event) {
+  //   setTimeout(() => {
+  //     console.log(`mouse location = X: ${event.x}`);
+  //   }, 1000);
+  // }
+
+  // onmousemove = function (e) {
+  //   if (isMouseDown) {
+  //     // console.log(`mouse location = X: ${e.x}`);
+  //     getMousePosition(e);
+  //   }
+  // };
+
+  // onmouseup = function () {
+  //   isMouseDown = false;
+  // };
+
+  // slider.addEventListener("mousedown", function () {
+  //   isMouseDown = true;
+  //   console.log("down");
+  // });
+
+  // slider.addEventListener("mouseup", function () {
+  //   isMouseDown = false;
+  //   console.log("up");
+  // });
 }

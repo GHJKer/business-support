@@ -53,7 +53,6 @@ export function createCalendar() {
     let currentMonthEvents = events
       .filter((item) => item.month === currentMonth)
       .map((item) => item.day);
-    console.log(currentMonthEvents);
 
     // пробелы для первого ряда
     // с понедельника до первого дня месяца
