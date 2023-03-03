@@ -212,6 +212,8 @@ export function createCalendar() {
   const monthText = document.getElementById("month-text");
   const nextEventSlide = document.getElementById("next-event");
   const prevEventSlide = document.getElementById("prev-event");
+  const nextEventSlideSmall = document.getElementById("next-event-small");
+  const prevEventSlideSmall = document.getElementById("prev-event-small");
   let afficheDate = document.getElementById("affiche-date");
   let afficheText = document.getElementById("affiche-text");
 
@@ -230,9 +232,19 @@ export function createCalendar() {
   // Меняем событие и дату через слайдер
   nextEventSlide.addEventListener("click", function () {
     changeEvent(true);
+    console.log("event");
   });
 
   prevEventSlide.addEventListener("click", function () {
+    changeEvent(false);
+  });
+
+  nextEventSlideSmall.addEventListener("click", function () {
+    changeEvent(true);
+    console.log("event");
+  });
+
+  prevEventSlideSmall.addEventListener("click", function () {
     changeEvent(false);
   });
 
