@@ -294,6 +294,11 @@
     }
   }
 
+  &__about-group {
+    display: flex;
+    gap: 15px;
+  }
+
   // 358 X 415 | 302 X 350 | 240 X 278 | 245 X 257
   &__img,
   &__img-big {

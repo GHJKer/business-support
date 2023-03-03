@@ -101,7 +101,7 @@
                 />
                 <div class="info__slide-text-group">
                   <span>Школа молодого предпринимателя — Бизнес молодых</span>
-                  <div class="affiche__control-right">
+                  <div class="info__about-group">
                     <span class="affiche__more">Подробнее</span>
                     <img
                       class="info__slide-arrow"
@@ -191,7 +191,7 @@
                 alt="arrow"
               />
               <img
-                id="next-event"
+                id="prev-event"
                 class="calendar-affiche__arrow-mobile calendar-affiche__arrow-mobile--left"
                 src="/svg/arrow-mobile.svg"
                 alt="arrow"
@@ -222,82 +222,85 @@
             </div>
           </div>
         </div>
-        <div id="modal" class="modal-window">
-          <img
-            id="modal-close"
-            class="modal-window__close"
-            src="/svg/close.svg"
-            alt="close"
-          />
-          <h2 class="modal-window__header">ЗАЯВКА НА ОКАЗАНИЕ УСЛУГИ</h2>
-          <div class="modal-window__input-container">
-            <div class="modal-window__input-group">
-              <input
-                id="name-input"
-                class="modal-window__input"
-                type="text"
-                placeholder="ФИО*"
-                required
-              />
-              <span id="error-text" class="modal-window__error-text"
-                >ФИО должно содержать только русские буквы</span
-              >
-            </div>
-            <div class="modal-window__input-group">
-              <input
-                class="modal-window__input"
-                id="input-phone"
-                required
-                placeholder="Телефон*"
-                type="number"
-                inputmode="tel"
-              />
-              <span id="error-text-tel" class="modal-window__error-text"
-                >Поле обязательно для заполнения</span
-              >
-            </div>
-            <input
-              class="modal-window__input"
-              type="email"
-              placeholder="E-mail*"
+        <div id="modal-fader" class="modal-fader">
+          <div id="modal" class="modal-window">
+            <img
+              id="modal-close"
+              class="modal-window__close"
+              src="/svg/close.svg"
+              alt="close"
             />
-            <select class="modal-window__select" placeholder="blabla">
-              <option class="modal-window__first-option">Выбрать услугу</option>
-              <option>Услуга 1</option>
-              <option>Услуга 2</option>
-              <option>Услуга 3</option>
-              <option>Услуга 4</option>
-            </select>
-            <textarea
-              name="comment"
-              id="comment-field"
-              placeholder="Комментарий"
-              class="modal-window__textarea"
-            ></textarea>
+            <h2 class="modal-window__header">ЗАЯВКА НА ОКАЗАНИЕ УСЛУГИ</h2>
+            <div class="modal-window__input-container">
+              <div class="modal-window__input-group">
+                <input
+                  id="name-input"
+                  class="modal-window__input"
+                  type="text"
+                  placeholder="ФИО*"
+                  required
+                />
+                <span id="error-text" class="modal-window__error-text"
+                  >ФИО должно содержать только русские буквы</span
+                >
+              </div>
+              <div class="modal-window__input-group">
+                <input
+                  class="modal-window__input"
+                  id="input-phone"
+                  required
+                  placeholder="Телефон*"
+                  type="number"
+                  inputmode="tel"
+                />
+                <span id="error-text-tel" class="modal-window__error-text"
+                  >Поле обязательно для заполнения</span
+                >
+              </div>
+              <input
+                class="modal-window__input"
+                type="email"
+                placeholder="E-mail*"
+              />
+              <select class="modal-window__select" placeholder="blabla">
+                <option class="modal-window__first-option">
+                  Выбрать услугу
+                </option>
+                <option>Услуга 1</option>
+                <option>Услуга 2</option>
+                <option>Услуга 3</option>
+                <option>Услуга 4</option>
+              </select>
+              <textarea
+                name="comment"
+                id="comment-field"
+                placeholder="Комментарий"
+                class="modal-window__textarea"
+              ></textarea>
+            </div>
+            <div class="modal-window__agreement-container">
+              <input
+                class="modal-window__checkbox"
+                type="checkbox"
+                id="scales"
+                name="scales"
+                checked
+              />
+              <p class="modal-window__agreement">
+                Я даю свое согласие Фонду развития бизнеса Краснодарского края
+                на обработку моих персональных данных, в соответствии с
+                Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных
+                данных», на условиях и для целей, определенных
+                <span class="modal-window__confidential"
+                  >Политикой конфиденциальности</span
+                >
+              </p>
+            </div>
+            <button id="close-modal" class="modal-window__button">
+              Оставить заявку
+            </button>
           </div>
-          <div class="modal-window__agreement-container">
-            <input
-              class="modal-window__checkbox"
-              type="checkbox"
-              id="scales"
-              name="scales"
-              checked
-            />
-            <p class="modal-window__agreement">
-              Я даю свое согласие Фонду развития бизнеса Краснодарского края на
-              обработку моих персональных данных, в соответствии с Федеральным
-              законом от 27.07.2006 года №152-ФЗ «О персональных данных», на
-              условиях и для целей, определенных
-              <span class="modal-window__confidential"
-                >Политикой конфиденциальности</span
-              >
-            </p>
-          </div>
-          <button id="close-modal" class="modal-window__button">
-            Оставить заявку
-          </button>
         </div>
-        <div id="modal-fader" class="modal-fader"></div>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

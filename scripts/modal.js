@@ -68,7 +68,8 @@ export function createModal() {
     checkInput();
   });
 
-  modalFader.addEventListener("click", function () {
+  modalFader.addEventListener("click", function (e) {
+    if (e.target.closest("#modal")) return;
     toggleModal();
   });
 
