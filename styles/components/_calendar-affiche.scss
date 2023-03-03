@@ -79,4 +79,9 @@
     left: 5px;
     top: 50%;
   }
+
+  &__arrow-mobile--left,
+  &__arrow-mobile--right {
+    cursor: pointer;
+  }
 }

@@ -120,6 +120,7 @@
   &__arrow-left,
   &__arrow-right {
     display: none;
+    cursor: pointer;
 
     @media #{$screen-md2-min} {
       display: inline;

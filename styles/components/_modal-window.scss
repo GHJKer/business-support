@@ -188,8 +188,12 @@
   }
 
   // &__checkbox {
-  //   accent-color: white;
-  //   outline: 0;
+  //   flex-shrink: 0;
+  //   width: 14px;
+  //   height: 14px;
+  //   color: red;
+  //   border: 0.1em solid #c4c4c4;
+  //   border-radius: 0;
   // }
 
   &__confidential {

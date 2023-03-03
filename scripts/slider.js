@@ -67,7 +67,7 @@ export function createSlider() {
 
   setSliderPosition();
 
-  left.onclick = function prev() {
+  function prev() {
     if (position >= 0) {
       return;
     }
@@ -78,9 +78,9 @@ export function createSlider() {
     position += imgWidth;
     slider.style.transform = `translate3d(${position}px, 0px, 0px)`;
     progressBar.style.setProperty("--currentSlide", itemNum - 1);
-  };
+  }
 
-  right.onclick = function next() {
+  function next() {
     if (position <= -imgWidth * 4) {
       return;
     }
@@ -91,34 +91,57 @@ export function createSlider() {
     position -= imgWidth;
     slider.style.transform = `translate3d(${position}px, 0px, 0px)`;
     progressBar.style.setProperty("--currentSlide", itemNum - 1);
+  }
+
+  left.addEventListener("click", () => {
+    prev();
+  });
+
+  right.addEventListener("click", () => {
+    next();
+  });
+
+  // Свайпер
+  let isMouseDown = false;
+  let getPositionWorking = false;
+  let positions = [];
+
+  function getMousePosition(event) {
+    if (!getPositionWorking) {
+      getPositionWorking = true;
+      setTimeout(() => {
+        console.log(`mouse location = X: ${event.changedTouches[0].clientX}`);
+        positions.push(`${event.changedTouches[0].clientX}`);
+        getPositionWorking = false;
+      }, 1);
+    }
+  }
+
+  ontouchmove = function (e) {
+    if (isMouseDown) {
+      getMousePosition(e);
+    }
   };
 
-  // let isMouseDown = false;
+  slider.addEventListener("touchstart", function () {
+    isMouseDown = true;
+    console.log("down");
+  });
 
-  // function getMousePosition(event) {
-  //   setTimeout(() => {
-  //     console.log(`mouse location = X: ${event.x}`);
-  //   }, 1000);
-  // }
+  ontouchend = function () {
+    isMouseDown = false;
+    let positionsDifference = positions[0] - positions[positions.length - 1];
+    if (positionsDifference < -imgWidth / 3) {
+      prev();
+    }
+    if (positionsDifference > imgWidth / 3) {
+      next();
+    }
+    positions = [];
 
-  // onmousemove = function (e) {
-  //   if (isMouseDown) {
-  //     // console.log(`mouse location = X: ${e.x}`);
-  //     getMousePosition(e);
-  //   }
-  // };
+    console.log(positionsDifference);
+    console.log("up");
+  };
 
-  // onmouseup = function () {
-  //   isMouseDown = false;
-  // };
-
-  // slider.addEventListener("mousedown", function () {
-  //   isMouseDown = true;
-  //   console.log("down");
-  // });
-
-  // slider.addEventListener("mouseup", function () {
-  //   isMouseDown = false;
-  //   console.log("up");
-  // });
+  // -- //
 }
