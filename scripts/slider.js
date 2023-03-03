@@ -111,12 +111,6 @@ export function createSlider() {
     getPositionWorking = false;
   }
 
-  // const ontouchmove = function (e) {
-  //   if (isTouchDown) {
-  //     getMousePosition(e);
-  //   }
-  // };
-
   slider.addEventListener("touchmove", function (e) {
     console.log("move", e.changedTouches[0].clientX);
     if (isTouchDown) {
@@ -139,18 +133,6 @@ export function createSlider() {
     }
     positions = [];
   });
-
-  // const ontouchend = function () {
-  //   isTouchDown = false;
-  //   let positionsDifference = positions[0] - positions[positions.length - 1];
-  //   if (positionsDifference < -imgWidth / 4) {
-  //     prev();
-  //   }
-  //   if (positionsDifference > imgWidth / 4) {
-  //     next();
-  //   }
-  //   positions = [];
-  // };
 
   // -- //
 }
