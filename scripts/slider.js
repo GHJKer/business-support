@@ -102,34 +102,29 @@ export function createSlider() {
   });
 
   // Свайпер
-  let isMouseDown = false;
+  let isTouchDown = false;
   let getPositionWorking = false;
   let positions = [];
 
   function getMousePosition(event) {
-    if (!getPositionWorking) {
-      getPositionWorking = true;
-      setTimeout(() => {
-        console.log(`mouse location = X: ${event.changedTouches[0].clientX}`);
-        positions.push(`${event.changedTouches[0].clientX}`);
-        getPositionWorking = false;
-      }, 1);
-    }
+    console.log(`mouse location = X: ${event.changedTouches[0].clientX}`);
+    positions.push(`${event.changedTouches[0].clientX}`);
+    getPositionWorking = false;
   }
 
   ontouchmove = function (e) {
-    if (isMouseDown) {
+    if (isTouchDown) {
       getMousePosition(e);
     }
   };
 
   slider.addEventListener("touchstart", function () {
-    isMouseDown = true;
+    isTouchDown = true;
     console.log("down");
   });
 
   ontouchend = function () {
-    isMouseDown = false;
+    isTouchDown = false;
     let positionsDifference = positions[0] - positions[positions.length - 1];
     if (positionsDifference < -imgWidth / 4) {
       prev();
