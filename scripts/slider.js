@@ -14,7 +14,6 @@ export function createSlider() {
   let itemNum = 1;
 
   let smallImg = document.getElementById("img-2").getBoundingClientRect().width;
-  let bigImg = document.getElementById("img-1").getBoundingClientRect().width;
   const slider = document.getElementById("slider");
   const left = document.getElementById("left");
   const right = document.getElementById("right");
@@ -22,8 +21,6 @@ export function createSlider() {
 
   let imgWidth = smallImg + gap;
   let position = 0;
-  let sliderButLastSlide =
-    slider.getBoundingClientRect().width - imgWidth + gap;
 
   function changeImageSize() {
     let PrevImgLocal = document.getElementById(`img-${prevItem}`);
@@ -38,9 +35,7 @@ export function createSlider() {
   // Обновляем размер изображенией в переменных
   function imageVarsControl() {
     smallImg = document.getElementById("img-2").getBoundingClientRect().width;
-    bigImg = document.getElementById("img-1").getBoundingClientRect().width;
     imgWidth = smallImg + gap;
-    sliderButLastSlide = slider.getBoundingClientRect().width - imgWidth + gap;
   }
   //
 
@@ -112,7 +107,6 @@ export function createSlider() {
   }
 
   slider.addEventListener("touchmove", function (e) {
-    console.log("move", e.changedTouches[0].clientX);
     if (isTouchDown) {
       getMousePosition(e);
     }

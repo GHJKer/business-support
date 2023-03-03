@@ -232,7 +232,6 @@ export function createCalendar() {
   // Меняем событие и дату через слайдер
   nextEventSlide.addEventListener("click", function () {
     changeEvent(true);
-    console.log("event");
   });
 
   prevEventSlide.addEventListener("click", function () {
@@ -241,7 +240,6 @@ export function createCalendar() {
 
   nextEventSlideSmall.addEventListener("click", function () {
     changeEvent(true);
-    console.log("event");
   });
 
   prevEventSlideSmall.addEventListener("click", function () {
