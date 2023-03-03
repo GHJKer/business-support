@@ -131,10 +131,10 @@ export function createSlider() {
   ontouchend = function () {
     isMouseDown = false;
     let positionsDifference = positions[0] - positions[positions.length - 1];
-    if (positionsDifference < -imgWidth / 3) {
+    if (positionsDifference < -imgWidth / 4) {
       prev();
     }
-    if (positionsDifference > imgWidth / 3) {
+    if (positionsDifference > imgWidth / 4) {
       next();
     }
     positions = [];
