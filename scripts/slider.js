@@ -8,6 +8,8 @@ export function createSlider() {
   const SliderVisiblePart = windowWIdth - sliderWindowDist;
   // -- //
 
+  let texts = document.querySelectorAll(".info__slide-text-group");
+
   let progressBar = document.getElementById("black-light");
 
   let prevItem;
@@ -126,6 +128,23 @@ export function createSlider() {
       next();
     }
     positions = [];
+  });
+
+  // -- //
+
+  // Добавляем скейл
+  texts.forEach(function (elem) {
+    elem.addEventListener("mouseover", function () {
+      console.log(elem);
+      elem.previousElementSibling.classList.add("info__scale");
+    });
+  });
+
+  texts.forEach(function (elem) {
+    elem.addEventListener("mouseleave", function () {
+      console.log(elem);
+      elem.previousElementSibling.classList.remove("info__scale");
+    });
   });
 
   // -- //

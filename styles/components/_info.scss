@@ -263,6 +263,12 @@
     }
   }
 
+  &__scale {
+    @media #{$screen-sm-min} {
+      transform: scale(1.15);
+    }
+  }
+
   &__slide-text-group {
     position: absolute;
     bottom: 20px;
