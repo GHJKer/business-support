@@ -71,6 +71,19 @@
     left: 15px;
     top: 35px;
     color: $orange;
+
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+
+    @media #{$screen-sm-max} {
+      left: 0;
+      top: 28px;
+      height: 25px;
+      font-size: 12px;
+      padding-left: 7px;
+    }
   }
 
   &__error {

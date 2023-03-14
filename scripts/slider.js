@@ -135,14 +135,12 @@ export function createSlider() {
   // Добавляем скейл
   texts.forEach(function (elem) {
     elem.addEventListener("mouseover", function () {
-      console.log(elem);
       elem.previousElementSibling.classList.add("info__scale");
     });
   });
 
   texts.forEach(function (elem) {
     elem.addEventListener("mouseleave", function () {
-      console.log(elem);
       elem.previousElementSibling.classList.remove("info__scale");
     });
   });
